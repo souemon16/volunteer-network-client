@@ -1,0 +1,32 @@
+.card{
+    width: 270px;
+    height: 320px;
+    float: left;
+    margin: 8px 29px;
+    margin-top: 100px;
+}
+.event-card img{
+    width: 270px;
+    height: 250px;
+    border-radius: 0;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+.event-title{
+    width: 270px;
+    height: 80px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: #FF7044;
+}
+.event-title h4{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.card:hover .event-title{
+    background-color: #FFBD3E;
+}

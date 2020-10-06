@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { eventContext, userContext } from '../../App';
+import { eventContext, taskContext, userContext } from '../../App';
 import Navbar from '../Navbar/Navbar';
 import './EventTask.css';
 
@@ -7,9 +7,11 @@ const EventTask = () => {
         const [volunteerTask, setVolunteerTask] = useState([]);
         const [event, setEvent] = useContext(eventContext);
         const [user, setUser] = useContext(userContext);
-    
+        const [task, setTask] = useContext(taskContext);
+
+        console.log(user);
         useEffect(() => {
-            fetch(`http://localhost:5000/volunteerList?email=${user.userEmail}`)
+            fetch('https://powerful-fjord-39055.herokuapp.com/FilteredVolunteerList?email='+task.volunteerEmail)
             .then(res => res.json())
             .then(data => setVolunteerTask(data))
         }, [])
@@ -20,8 +22,9 @@ const EventTask = () => {
                 })
                 .then(res => res.json())
                 .then(result => {
-                    console.log("deleted")
+                    console.log("result")
                 })
+                console.log(id);
         } 
     return (
         <>
@@ -34,7 +37,7 @@ const EventTask = () => {
                 <div className="event-detail">
                     <h4>{task.taskName}</h4>
                     <p>{task.taskDate}</p>
-                    <button onClick={handleDelete(`${user._id}`)} className="btn btn-outline-danger">Cancel</button>
+                    <button onClick={() => handleDelete(`${task._id}`)} className="btn btn-outline-danger">Cancel</button>
                 </div>
             </div>
             )

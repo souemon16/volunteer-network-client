@@ -23,13 +23,13 @@ const RegisterVolunteer = () => {
         e.preventDefault();
 
         // Send Data to BackHend 
-        fetch('http://localhost:5000/addVolunteer', {
+        fetch('https://powerful-fjord-39055.herokuapp.com/addVolunteer', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newVolunteer)
         })
         .then(res => res.json())
-        .then(data => console.log("post submitted"))
+        .then(data => console.log("Volunteer Added"))
     }
     return (
         <div id='register-section'>
@@ -44,7 +44,7 @@ const RegisterVolunteer = () => {
                     <input type="Date" class="form-control form-style" required placeholder="Date" />
                     <input type="text" class="form-control form-style" required placeholder="Description" />
                     <input type="text" class="form-control form-style" required placeholder="Event Name" value={task.taskName} />
-                    <button onClick={handleSubmit} className='btn btn-block btn-primary' type="submit">Registration</button>
+                    <button onClick={() => handleSubmit()} className='btn btn-block btn-primary' type="submit">Registration</button>
                     </form>
                 </div>
             </div>

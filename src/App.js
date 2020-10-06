@@ -56,9 +56,9 @@ function App() {
           <RegisterVolunteer/>
         </PrivateRoute>
 
-        <Route path='/event-task'>
+        <PrivateRoute path='/event-task'>
           <EventTask/>
-        </Route>
+        </PrivateRoute>
 
         <Route path='/volunteer-list'>
           <VolunteerList/>

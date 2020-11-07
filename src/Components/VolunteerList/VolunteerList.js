@@ -12,14 +12,14 @@ const VolunteerList = () => {
     const [volunteerList, setVolunteerList] = useState([]);
 
     useEffect(() => {
-        fetch(`https://powerful-fjord-39055.herokuapp.com/volunteerList`)
+        fetch(`https://volunteer-network-sourav.herokuapp.com/volunteerList`)
         .then(res => res.json())
         .then(data => setVolunteerList(data))
     }, [])
     
     const handleDeleteUser = (id) => {
 
-        fetch(`https://powerful-fjord-39055.herokuapp.com/deleteUser/${id}`,{
+        fetch(`https://volunteer-network-sourav.herokuapp.com/deleteUser/${id}`,{
             method: 'DELETE',
           })
             .then((res) => res.json())

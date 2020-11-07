@@ -13,7 +13,7 @@ const Home = () => {
     const [event, setEvent] = useContext(eventContext);
 
     useEffect(() => {
-        fetch('https://powerful-fjord-39055.herokuapp.com/events')
+        fetch('https://volunteer-network-sourav.herokuapp.com/events')
         .then(res => res.json())
         .then(data => setEvent(data))
     }, [])

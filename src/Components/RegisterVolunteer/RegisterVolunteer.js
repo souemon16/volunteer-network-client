@@ -23,7 +23,7 @@ const RegisterVolunteer = () => {
         e.preventDefault();
 
         // Send Data to BackHend 
-        fetch('https://powerful-fjord-39055.herokuapp.com/addVolunteer', {
+        fetch('https://volunteer-network-sourav.herokuapp.com/addVolunteer', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newVolunteer)

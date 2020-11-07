@@ -15,7 +15,7 @@ const AddEvent = () => {
         }
         console.log(eventDetails);
          // Add Event to BackHend 
-         fetch('https://powerful-fjord-39055.herokuapp.com/addEvent', {
+         fetch('https://volunteer-network-sourav.herokuapp.com/addEvent', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(eventDetails)

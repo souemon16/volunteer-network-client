@@ -11,13 +11,13 @@ const EventTask = () => {
 
         console.log(user);
         useEffect(() => {
-            fetch('https://powerful-fjord-39055.herokuapp.com/FilteredVolunteerList?email='+task.volunteerEmail)
+            fetch('https://volunteer-network-sourav.herokuapp.com/FilteredVolunteerList?email='+task.volunteerEmail)
             .then(res => res.json())
             .then(data => setVolunteerTask(data))
         }, [])
 
         const handleDelete = (id) => { 
-                fetch(`/delete/${id}`, {
+                fetch(`https://volunteer-network-sourav.herokuapp.com/delete/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
